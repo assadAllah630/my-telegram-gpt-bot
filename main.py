@@ -1,14 +1,16 @@
 import logging
-import openai
+from openai import OpenAI
+
+
 from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler, filters
 import os
 
 # === 🔐 Get credentials from environment variables ===
 TELEGRAM_TOKEN = os.getenv('8135129182:AAFzuChkeaZHjVLA0oztBrCct4pG1P8WUNI')
-OPENAI_API_KEY = os.getenv('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')
-openai.api_key = OPENAI_API_KEY
-
+client = OpenAI(
+  api_key=os.environ['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'],  # this is also the default, it can be omitted
+)
 # === 🎓 Custom GPT Instructions ===
 SYSTEM_PROMPT = "You are a helpful assistant that answers briefly and clearly."
 
