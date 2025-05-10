@@ -5,8 +5,8 @@ from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, Messa
 import os
 
 # === 🔐 Get credentials from environment variables ===
-TELEGRAM_TOKEN = os.getenv('8135129182:AAFzuChkeaZHjVLA0oztBrCct4pG1P8WUNI')
-OPENAI_API_KEY = os.getenv('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')
+TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 openai.api_key = OPENAI_API_KEY
 
 # === 🎓 Custom GPT Instructions ===
